@@ -13,7 +13,7 @@ pipeline {
                     case $AwsCredentialId in
                         AWS-DEV-*)
                             cat - > aws.env <<EOF
-export S3URL=s3://mail-maps/${BUILD_TAG}/fs.tgz
+export S3URL=s3://mail-maps/ami/${BUILD_TAG}/fs.tgz
 export S3REGION=ap-northeast-1
 export BUILDAMI_SECURITYGROUPS='sg-0db129a90e91155ae'
 export BUILDAMI_SUBNET='subnet-08ae7d69afad57367'
