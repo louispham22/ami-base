@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Prepare Environment') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tools']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '0b5c6ad2-f499-4557-8c8d-c944df92c407', name:'origin', refspec:'+refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* ${Refspec}', url: 'https://github.com/tunglouis/ami-maps.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tools']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '0b5c6ad2-f499-4557-8c8d-c944df92c407', name:'origin', refspec:'+refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* ${Refspec}', url: 'https://github.com/tunglouis/automation-jenkins-tools.git']]])
                 sh label: 'Prepare Environment Variables', script: '''#!/bin/bash
                     case $AwsCredentialId in
                         AWS-DEV-*)
